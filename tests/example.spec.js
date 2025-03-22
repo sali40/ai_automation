@@ -15,7 +15,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = process.env.GEMINI_MODEL;
 
 // Optional: provide an environment variable START_ACTIVITY (zero-based index) to start processing from a certain activity.
-const START_ACTIVITY = 15//process.env.START_ACTIVITY ? parseInt(process.env.START_ACTIVITY) : 0;
+const START_ACTIVITY = process.env.START_ACTIVITY ? parseInt(process.env.START_ACTIVITY) : 0;
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 const quizLogs = [];

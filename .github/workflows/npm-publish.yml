@@ -24,6 +24,11 @@ on:
         description: 'Enter the timeout in milliseconds'
         required: false
         default: '60000'
+      start_index:
+        description: 'Enter the start activity number'
+        required: false
+        type: number
+        default: 0
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -64,6 +69,7 @@ jobs:
           COURSE: ${{ github.event.inputs.course }}
           MODULE: ${{ github.event.inputs.module }}
           TIMEOUT: ${{ github.event.inputs.timeout }}
+          START_ACTIVITY: ${{ github.event.inputs.start_index}}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
         run: npx playwright test
