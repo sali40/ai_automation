@@ -8,18 +8,18 @@ on:
         required: true
         type: choice
         options:
-          - 'Python Programming (CSIT232)-Semester IV'
-          - 'Unix Operating System and Shell Programming (CSIT311)-Semester IV'
+          - Python Programming (CSIT232)-Semester IV
+          - Unix Operating System and Shell Programming (CSIT311)-Semester IV
       module:
         description: 'Select the module name'
         required: true
         type: choice
         options:
-          - 'Module 1'
-          - 'Module 2'
-          - 'Module 3'
-          - 'Module 4'
-          - 'Module 5'
+          - Module 1
+          - Module 2
+          - Module 3
+          - Module 4
+          - Module 5
       timeout:
         description: 'Enter the timeout in milliseconds'
         required: false
