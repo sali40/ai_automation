@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 dotenv.config();
 
+
+
 const timeout = 600000;
 
 const USER_NAME = process.env.USER_NAME;
@@ -24,6 +26,10 @@ const quizLogs = [];
  * A helper function to safely click on a locator.
  * In case of any error, a full-page screenshot is taken and the error is logged.
  */
+test.use({
+  video: 'on'
+});
+
 async function safeClick(locator, page, description) {
   try {
     console.log(`[INFO] Attempting to click ${description}`);

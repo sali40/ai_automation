@@ -1,0 +1,866 @@
+[
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is true after swapping val1=1, val2=2?",
+    "options": [
+      "a. val=1, val2=2",
+      "b. val1=2, val2=1",
+      "c. val1 = 1, val2=1",
+      "d. val1=2, val2=2"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which aming the following helps to swap without temporary variable?",
+    "options": [
+      "a. x = x + y; y = x - y; x = x - y;",
+      "b. x = x + y;  x = x - y; y = x - y",
+      "c. x = x + y; y = x - y; x = y - x;",
+      "d. y = x + y; y = x - y; x = x - y;"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is true after swapping val1=1, val2=2?",
+    "options": [
+      "a. val=1, val2=2",
+      "b. val1=2, val2=1",
+      "c. val1 = 1, val2=1",
+      "d. val1=2, val2=2"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which aming the following helps to swap without temporary variable?",
+    "options": [
+      "a. x = x + y; y = x - y; x = x - y;",
+      "b. x = x + y;  x = x - y; y = x - y",
+      "c. x = x + y; y = x - y; x = y - x;",
+      "d. y = x + y; y = x - y; x = x - y;"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What happens in the code?",
+    "options": [
+      "a. implicit type conversion",
+      "b. explicit type conversion",
+      "c. error",
+      "d. no output"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What will be the output of the following statement? print(complex(3))",
+    "options": [
+      "a. \n3",
+      "b. \n3j",
+      "c. \n(3+0j)",
+      "d. \nno output"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is true after swapping val1=1, val2=2?",
+    "options": [
+      "a. val=1, val2=2",
+      "b. val1=2, val2=1",
+      "c. val1 = 1, val2=1",
+      "d. val1=2, val2=2"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which aming the following helps to swap without temporary variable?",
+    "options": [
+      "a. x = x + y; y = x - y; x = x - y;",
+      "b. x = x + y;  x = x - y; y = x - y",
+      "c. x = x + y; y = x - y; x = y - x;",
+      "d. y = x + y; y = x - y; x = x - y;"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What happens in the code?",
+    "options": [
+      "a. implicit type conversion",
+      "b. explicit type conversion",
+      "c. error",
+      "d. no output"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What will be the output of the following statement? print(complex(3))",
+    "options": [
+      "a. \n3",
+      "b. \n3j",
+      "c. \n(3+0j)",
+      "d. \nno output"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "The function to find the Euclidean distance is",
+    "options": [
+      "a. math.dist(p,q)",
+      "b. math.erfc()",
+      "c. math.pow()",
+      "d. math.radians()"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "The ___ returns natural logarithm of 1+x",
+    "options": [
+      "a. log()",
+      "b. log10()",
+      "c. log1p()",
+      "d. log2()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is true after swapping val1=1, val2=2?",
+    "options": [
+      "a. val=1, val2=2",
+      "b. val1=2, val2=1",
+      "c. val1 = 1, val2=1",
+      "d. val1=2, val2=2"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which aming the following helps to swap without temporary variable?",
+    "options": [
+      "a. x = x + y; y = x - y; x = x - y;",
+      "b. x = x + y;  x = x - y; y = x - y",
+      "c. x = x + y; y = x - y; x = y - x;",
+      "d. y = x + y; y = x - y; x = x - y;"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What happens in the code?",
+    "options": [
+      "a. implicit type conversion",
+      "b. explicit type conversion",
+      "c. error",
+      "d. no output"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What will be the output of the following statement? print(complex(3))",
+    "options": [
+      "a. \n3",
+      "b. \n3j",
+      "c. \n(3+0j)",
+      "d. \nno output"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "The function to find the Euclidean distance is",
+    "options": [
+      "a. math.dist(p,q)",
+      "b. math.erfc()",
+      "c. math.pow()",
+      "d. math.radians()"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "The ___ returns natural logarithm of 1+x",
+    "options": [
+      "a. log()",
+      "b. log10()",
+      "c. log1p()",
+      "d. log2()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What does recursion depend on?",
+    "options": [
+      "a. Large instances of different problems",
+      "b. Large instances of same problem",
+      "c. Small instances of the same problem",
+      "d. Small instances of different problems"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What is recursion similar to?",
+    "options": [
+      "a. if statement",
+      "b. while loop",
+      "c. if..else statement",
+      "d. if..elif..else"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What is not the need to create functions?",
+    "options": [
+      "a. modularity",
+      "b. parallelize",
+      "c. repetition",
+      "d. reusability"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is a good function naming style?",
+    "options": [
+      "a. Funcname()",
+      "b. FUNCNAME()",
+      "c. func_name()",
+      "d. func.name()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "___ keyword is used to define functions.",
+    "options": [
+      "a. define",
+      "b. def",
+      "c. fun",
+      "d. function"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is false?",
+    "options": [
+      "a. Functions cannot return multiple values",
+      "b. They can take parameters",
+      "c. Return any data type",
+      "d. return statement can be empty"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is incorrect?",
+    "options": [
+      "a. def func(var1, var2)",
+      "b. def func(var1, var2=10)",
+      "c. def func(var1, *var2)",
+      "d. def func(*var1, var2)"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "How are arguments passed in Python?",
+    "options": [
+      "a. pass by value",
+      "b. pass by reference",
+      "c. choice to programmer",
+      "d. pass by reference and by value"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which among the following is true after swapping val1=1, val2=2?",
+    "options": [
+      "a. val=1, val2=2",
+      "b. val1=2, val2=1",
+      "c. val1 = 1, val2=1",
+      "d. val1=2, val2=2"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "Which aming the following helps to swap without temporary variable?",
+    "options": [
+      "a. x = x + y; y = x - y; x = x - y;",
+      "b. x = x + y;  x = x - y; y = x - y",
+      "c. x = x + y; y = x - y; x = y - x;",
+      "d. y = x + y; y = x - y; x = x - y;"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What happens in the code?",
+    "options": [
+      "a. implicit type conversion",
+      "b. explicit type conversion",
+      "c. error",
+      "d. no output"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "What will be the output of the following statement? print(complex(3))",
+    "options": [
+      "a. \n3",
+      "b. \n3j",
+      "c. \n(3+0j)",
+      "d. \nno output"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "The function to find the Euclidean distance is",
+    "options": [
+      "a. math.dist(p,q)",
+      "b. math.erfc()",
+      "c. math.pow()",
+      "d. math.radians()"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "The ___ returns natural logarithm of 1+x",
+    "options": [
+      "a. log()",
+      "b. log10()",
+      "c. log1p()",
+      "d. log2()"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What does recursion depend on?",
+    "options": [
+      "a. Large instances of different problems",
+      "b. Large instances of same problem",
+      "c. Small instances of the same problem",
+      "d. Small instances of different problems"
+    ],
+    "geminiAnswer": "c",
+    "selectedAnswer": "c.",
+    "selectedIndex": 0
+  },
+  {
+    "question": "What is recursion similar to?",
+    "options": [
+      "a. if statement",
+      "b. while loop",
+      "c. if..else statement",
+      "d. if..elif..else"
+    ],
+    "geminiAnswer": "b",
+    "selectedAnswer": "b.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "The __ is not stored in a stack during recursion.",
+    "options": [
+      "a. return address",
+      "b. local variables",
+      "c. arguments",
+      "d. global variables"
+    ],
+    "geminiAnswer": "d",
+    "selectedAnswer": "d.",
+    "selectedIndex": -1
+  },
+  {
+    "question": "In a stack ___ .",
+    "options": [
+      "a. pop removes the top element",
+      "b. pop inserts element at the top",
+      "c. puch removes the bottom element",
+      "d. puch inserts element at the bottom"
+    ],
+    "geminiAnswer": "a",
+    "selectedAnswer": "a.",
+    "selectedIndex": -1
+  }
+]

@@ -1,3 +1,0 @@
-[2025-03-22T09:37:35.931Z] === Starting Gemini-driven automation test ===
-[2025-03-22T09:37:35.934Z] Navigating to initial URL
-[2025-03-22T09:37:35.936Z] Test failed with error: page.goto: url: expected string, got undefined
