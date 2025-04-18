@@ -26,15 +26,17 @@ function logStep(message) {
 
 //–– central click helper ––
 async function safeClick(locator, page, description) {
-  logStep(`➡️ about to click: ${description}`);
+  logStep(`➡️ Waiting for: ${description}`);
+  await locator.waitFor({ state: 'visible', timeout: 10000 });
+  logStep(`➡️ Clicking: ${description}`);
   try {
     await locator.click();
-    logStep(`✅ clicked: ${description}`);
+    logStep(`✅ Clicked: ${description}`);
   } catch (err) {
     const shot = `screenshots/error-${Date.now()}.png`;
     await page.screenshot({ path: shot, fullPage: true });
-    logStep(`❌ click failed: ${description} — ${err.message}`);
-    logStep(`📷 screenshot saved: ${shot}`);
+    logStep(`❌ Click failed: ${description} — ${err.message}`);
+    logStep(`📷 Screenshot saved: ${shot}`);
     throw err;
   }
 }
@@ -42,18 +44,15 @@ async function safeClick(locator, page, description) {
 //–– close or remove the popup ––
 async function closeWelcomePopup(page) {
   logStep(`🔍 Checking for welcome popup`);
-  const closeBtn = page.locator('#welcomePopup .popup-close');
   try {
-    await closeBtn.waitFor({ timeout: 5000 });
-    await safeClick(closeBtn, page, 'Welcome popup close button');
-    logStep(`🗙 Popup closed via button`);
-  } catch {
-    logStep(`⚠️ Close button not clickable—removing #welcomePopup via DOM`);
+    await page.waitForSelector('#welcomePopup', { timeout: 5000 });
+    logStep(`🗙 Found popup – removing via DOM`);
     await page.evaluate(() => {
-      const el = document.getElementById('welcomePopup');
-      if (el) el.remove();
+      document.getElementById('welcomePopup')?.remove();
     });
-    logStep(`🗑️ Popup removed from DOM`);
+    logStep(`✅ Popup removed from DOM`);
+  } catch {
+    logStep(`ℹ️ No popup appeared`);
   }
 }
 
@@ -80,38 +79,18 @@ ${html}
   }
 }
 
-//–– persist quiz answers ––
-function appendQuizLog(newLogs) {
-  logStep(`💾 Appending ${newLogs.length} quiz logs to quiz-log.json`);
-  let existing = [];
-  try {
-    if (fs.existsSync('quiz-log.json')) {
-      existing = JSON.parse(fs.readFileSync('quiz-log.json', 'utf8'));
-      logStep(`📂 Read ${existing.length} existing logs`);
-    }
-  } catch (err) {
-    logStep(`⚠️ Error reading existing log: ${err.message}`);
-  }
-  fs.writeFileSync(
-    'quiz-log.json',
-    JSON.stringify(existing.concat(newLogs), null, 2)
-  );
-  logStep(`✅ quiz-log.json updated; total logs: ${existing.length + newLogs.length}`);
-}
-
 //–– navigate activities & handle quizzes ––
 async function navigateToNextActivity(page) {
-  logStep(`▶️ Entering activity loop (start at ${START_ACTIVITY})`);
+  logStep(`▶️ Entering activity loop (start index: ${START_ACTIVITY})`);
   await closeWelcomePopup(page);
 
   let nextLink = page.locator('a:has-text("Next Activity")');
   let idx = 0;
 
-  while ((await nextLink.count()) > 0) {
+  while (await nextLink.count() > 0) {
     logStep(`🔄 Activity #${idx}`);
 
     if (idx < START_ACTIVITY) {
-      logStep(`⏭️ Skipping to activity #${idx + 1}`);
       await safeClick(nextLink, page, 'Next Activity link');
       await page.waitForTimeout(2000);
       idx++;
@@ -119,15 +98,17 @@ async function navigateToNextActivity(page) {
       continue;
     }
 
-    if ((await page.locator('text=Quiz already submitted').count()) > 0) {
+    if (await page.locator('text=Quiz already submitted').count() > 0) {
       logStep(`✅ Detected “Quiz already submitted”—skipping`);
       await safeClick(nextLink, page, 'Next Activity link');
       await page.waitForTimeout(2000);
-      idx++; nextLink = page.locator('a:has-text("Next Activity")'); continue;
+      idx++;
+      nextLink = page.locator('a:has-text("Next Activity")');
+      continue;
     }
 
     if (await page.locator('text=Module Assessment').isVisible().catch(() => false)) {
-      logStep(`🛑 “Module Assessment” found—exiting activity loop`);
+      logStep(`🛑 “Module Assessment” found—exiting loop`);
       return;
     }
 
@@ -135,9 +116,9 @@ async function navigateToNextActivity(page) {
     const attemptBtn = page.getByRole('button', { name: 'Attempt quiz' });
     const continueBtn = page.getByRole('button', { name: 'Continue your attempt' });
 
-    if ((suggestion === 'start quiz' || suggestion === 'go to next') && (await attemptBtn.isVisible())) {
+    if ((suggestion === 'start quiz' || suggestion === 'go to next') && await attemptBtn.isVisible()) {
       await safeClick(attemptBtn, page, 'Attempt quiz button');
-    } else if (suggestion === 'continue quiz' && (await continueBtn.isVisible())) {
+    } else if (suggestion === 'continue quiz' && await continueBtn.isVisible()) {
       await safeClick(continueBtn, page, 'Continue your attempt button');
     }
 
@@ -148,9 +129,8 @@ async function navigateToNextActivity(page) {
 
     const finishBtn = page.getByRole('button', { name: 'Finish attempt' });
     if (await finishBtn.isVisible()) {
-      logStep(`✍️ Answering quiz on activity #${idx}`);
+      logStep(`✍️ Answering quiz at activity #${idx}`);
       const questions = await page.locator('.que').all();
-      logStep(`📑 Found ${questions.length} question blocks`);
 
       for (let i = 0; i < questions.length; i++) {
         logStep(`❓ Processing question ${i + 1}`);
@@ -165,33 +145,48 @@ ${txt}
 """
 `.trim();
 
-        let result = { question: '', options: [], answer: '' };
+        let geminiResult = { question: '', options: [], answer: '' };
         try {
           const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
           const raw = (await model.generateContent(prompt)).response.text();
           const json = JSON.parse(raw.match(/{[\s\S]+}/)[0]);
-          result = {
+          geminiResult = {
             question: json.question.trim(),
             options: json.options,
             answer: json.answer.trim().toLowerCase(),
           };
-          logStep(`🔍 Gemini Q${i + 1}: answer=${result.answer}`);
+          logStep(`🔍 Gemini Q${i + 1}: answer=${geminiResult.answer}`);
         } catch (e) {
           logStep(`⚠️ Gemini parse error on Q${i + 1}: ${e.message}`);
         }
 
-        if (result.answer) {
-          const opt = block.locator('label').filter({
-            hasText: new RegExp(`^\\s*${result.answer}[\\.:]`),
-          }).first();
-          if ((await opt.count()) > 0) {
-            await safeClick(opt, page, `Option ${result.answer} for Q${i + 1}`);
+        if (geminiResult.answer) {
+          const letter = geminiResult.answer;
+          const optionIndex = letter.charCodeAt(0) - 97; // a→0, b→1, etc.
+          const radios = block.locator('input[type="radio"]');
+
+          if (await radios.count() > optionIndex) {
+            logStep(`➡️ Checking radio #${optionIndex} (${letter})`);
+            await radios.nth(optionIndex).check();
+            logStep(`✅ Radio ${letter} checked`);
           } else {
-            logStep(`❗ Option ${result.answer} not found for Q${i + 1}`);
+            const fullText = geminiResult.options[optionIndex];
+            if (fullText) {
+              const lbl = block.locator('label', { hasText: fullText });
+              if (await lbl.count() > 0) {
+                logStep(`➡️ Falling back to clicking label: "${fullText}"`);
+                await safeClick(lbl.first(), page, `label for ${letter}`);
+                logStep(`✅ Clicked label for ${letter}`);
+              } else {
+                logStep(`❗ Could not find label text "${fullText}"`);
+              }
+            } else {
+              logStep(`❗ No option text for letter ${letter}`);
+            }
           }
         }
 
-        quizLogs.push(result);
+        quizLogs.push(geminiResult);
       }
 
       const beforeSnap = `screenshots/before-finish-${Date.now()}.png`;
@@ -207,7 +202,6 @@ ${txt}
       await page.waitForSelector('text=Your attempt has been submitted', { state: 'hidden', timeout });
       logStep(`✅ Quiz submitted for activity #${idx}`);
 
-      appendQuizLog(quizLogs);
       const afterSnap = `screenshots/quiz-submitted-${Date.now()}.png`;
       await page.screenshot({ path: afterSnap, fullPage: true });
       logStep(`📷 Screenshot after submission: ${afterSnap}`);
@@ -234,13 +228,13 @@ async function fillFeedbackForm(page) {
   logStep(`📊 Found ${groups.length} feedback questions`);
   for (let i = 0; i < Math.min(groups.length, 2); i++) {
     const radios = groups[i].locator('input[type="radio"]');
-    if ((await radios.count()) >= 6) {
+    if (await radios.count() >= 6) {
       await safeClick(radios.nth(5), page, `6th radio for Q${i + 1}`);
     }
   }
 
   const submit = page.getByRole('button', { name: 'Submit' });
-  if ((await submit.count()) > 0) {
+  if (await submit.count() > 0) {
     await safeClick(submit, page, 'Submit feedback button');
     logStep(`✅ Feedback submitted`);
   } else {
@@ -278,6 +272,14 @@ async function tryClickCardWithFallback(page) {
 //–– the test itself ––
 test('🎓 Amity course automation with Gemini AI', async ({ page }) => {
   logStep(`🟢 Test started`);
+
+  // delete existing log file if present
+  if (fs.existsSync('quiz-log.json')) {
+    logStep(`🗑️ Deleting existing quiz-log.json`);
+    fs.unlinkSync('quiz-log.json');
+    logStep(`✅ Deleted existing quiz-log.json`);
+  }
+
   test.setTimeout(timeout);
 
   page.on('pageerror', err => {
@@ -299,16 +301,16 @@ test('🎓 Amity course automation with Gemini AI', async ({ page }) => {
   await closeWelcomePopup(page);
 
   logStep(`📚 Selecting course: ${COURSE}`);
-  await safeClick(page.getByRole('link', { name: COURSE }), page, `Course link "${COURSE}"`);
+  await safeClick(page.getByRole('link', { name: COURSE }), page, `Course "${COURSE}"`);
   await closeWelcomePopup(page);
 
   logStep(`📖 Selecting module: ${MODULE}`);
-  await safeClick(page.getByRole('link', { name: MODULE }), page, `Module link "${MODULE}"`);
+  await safeClick(page.getByRole('link', { name: MODULE }), page, `Module "${MODULE}"`);
 
   await tryClickCardWithFallback(page);
   await navigateToNextActivity(page);
 
-  if ((await page.getByRole('button', { name: 'Answer the questions' }).count()) > 0) {
+  if (await page.getByRole('button', { name: 'Answer the questions' }).count() > 0) {
     await fillFeedbackForm(page);
   } else {
     logStep(`ℹ️ No feedback form detected`);
@@ -316,6 +318,11 @@ test('🎓 Amity course automation with Gemini AI', async ({ page }) => {
 
   logStep(`📷 Final screenshot`);
   await page.screenshot({ path: 'screenshots/final.png', fullPage: true });
+
+  // save all quiz logs at the end
+  logStep(`💾 Saving quiz logs to quiz-log.json`);
+  fs.writeFileSync('quiz-log.json', JSON.stringify(quizLogs, null, 2));
+  logStep(`✅ quiz-log.json written with ${quizLogs.length} entries`);
 
   logStep(`🔚 Test finished`);
 });
