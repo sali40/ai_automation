@@ -309,8 +309,8 @@ test('🎓 Amity course automation with Gemini AI', async ({ page }) => {
 
   try {
     // Wait up to 3s for the popup’s close button
-    await page.waitForSelector('#welcomePopup .popup-close', { timeout: 3000 });
-    await page.click('#welcomePopup .popup-close');
+    await page.waitForSelector('#popupCloseBtn', { timeout: 3000 });
+    await page.click('#popupCloseBtn');
     console.log('[INFO] Closed welcome overlay');
   } catch {
     // If the button never appears, silently continue
