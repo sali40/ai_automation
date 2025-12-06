@@ -8,8 +8,9 @@ on:
         required: true
         type: choice
         options:
-          - Python Programming (CSIT232)-Semester IV
-          - Unix Operating System and Shell Programming (CSIT311)-Semester IV
+          - Fundamentals of Ecommerce (CSIT334)-Semester V
+          - Introduction to Artificial Intelligence (CSIT361)-Semester V
+          - Professional Ethics (PFE301)-Semester V
       module:
         description: 'Select the module name'
         required: true
